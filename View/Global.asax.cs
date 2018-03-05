@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace View
+namespace Vista
 {
     public class Global : System.Web.HttpApplication
     {
