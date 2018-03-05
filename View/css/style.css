@@ -1,0 +1,17 @@
+﻿body {
+    background-color:#f2f2f2;
+    font-family:'Roboto';
+}
+
+hr{
+    display:block;
+    margin:2em 1em;
+    padding:1.5em 1em;
+}
+
+footer{
+    text-align:center;
+    display:block;
+    margin:auto;
+    padding: 1.5em 2em;
+}
