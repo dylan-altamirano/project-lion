@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class CategoriaDato
+    public class UsuarioDato
     {
-        public static DataSet SeleccionarTodos()
+        public static SqlDataReader SeleccionarTodos()
         {
             Database db = DatabaseFactory.CreateDatabase("Default");
-            SqlCommand comando = new SqlCommand("sp_obtener_categorias");
+            SqlCommand comando = new SqlCommand("PA_SeleccionarAlquileres");
             comando.CommandType = CommandType.StoredProcedure;
-            DataSet ds = db.ExecuteReader(comando, "categoria");
-            return ds;
+            SqlDataReader reader = db.ExecuteReader(comando);
+            return reader;
         }
     }
 }
