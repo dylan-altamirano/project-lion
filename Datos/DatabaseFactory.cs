@@ -40,7 +40,7 @@ namespace Datos
             catch (Exception ex)
             {
                 ex.Source += " Conexion " + con + "Parámetro :" + nombre;
-                Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                Console.Write(MethodBase.GetCurrentMethod().Name, ex);
 
                 throw ex;
 
@@ -74,7 +74,7 @@ namespace Datos
             catch (Exception ex)
             {
                 ex.Source += " Conexion " + con + "Parámetro :" + nombre;
-                Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                Console.Write(MethodBase.GetCurrentMethod().Name, ex);
 
                 throw ex;
 

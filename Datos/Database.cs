@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Log;
 
 namespace Datos
 {
@@ -30,7 +31,7 @@ namespace Datos
             catch (Exception ex)
             {
                 ex.Source += " SQL: " + sqlCommand.CommandText.ToString();
-                Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                Console.Write(MethodBase.GetCurrentMethod().Name, ex);
                 throw ex;
             }
 
@@ -54,7 +55,7 @@ namespace Datos
             catch (Exception ex)
             {
                 ex.Source += " SQL: " + sqlCommand.CommandText.ToString();
-                Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                Console.Write(MethodBase.GetCurrentMethod().Name, ex);
                 throw ex;
             }
             finally
@@ -92,7 +93,7 @@ namespace Datos
                 catch (Exception ex)
                 {
                     ex.Source += " SQL: " + sqlCommand.CommandText.ToString();
-                    Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                    Console.Write(MethodBase.GetCurrentMethod().Name, ex);
                     throw ex;
                 }
 
@@ -117,7 +118,7 @@ namespace Datos
             catch (Exception ex)
             {
                 ex.Source += " SQL: " + sqlCommand.CommandText.ToString();
-                Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                Console.Write(MethodBase.GetCurrentMethod().Name, ex);
                 throw ex;
             }
         }
@@ -143,7 +144,7 @@ namespace Datos
                 catch (Exception ex)
                 {
                     ex.Source += " SQL: " + sqlCommand.CommandText.ToString();
-                    Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                    Console.Write(MethodBase.GetCurrentMethod().Name, ex);
                     throw ex;
                 }
 
@@ -170,7 +171,7 @@ namespace Datos
                 catch (Exception ex)
                 {
                     ex.Source += " SQL: " + commands.ToString();
-                    Log.Write(MethodBase.GetCurrentMethod().Name, ex);
+                    Console.Write(MethodBase.GetCurrentMethod().Name, ex);
 
                     throw ex;
                 }
