@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Datos;
 using Entidades;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace LoginaNegocio
 {
@@ -26,6 +27,24 @@ namespace LoginaNegocio
                 lista.Add(registro);
             }
             return lista;
+        }
+
+        public static Categoria SeleccionarCategoria(string id)
+        {
+            Categoria categoria = null;
+
+            SqlDataReader data = CategoriaDato.SeleccionarCategoria(id);
+
+            while (data.Read())
+            {
+                categoria = new Categoria();
+
+                categoria.categoria_id = data["categoria_id"].ToString();
+                categoria.nombreCategoria = data["nombre"].ToString();
+                categoria.activo = Convert.ToBoolean(data["activo"]);
+            }
+
+            return categoria;
         }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="CategoriaDato.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseFactory.cs" />
+    <Compile Include="ProductoDato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDato.cs" />
   </ItemGroup>

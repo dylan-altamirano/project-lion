@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaLN.cs" />
+    <Compile Include="ProductoLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioLN.cs" />
   </ItemGroup>
