@@ -41,6 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaLN.cs" />
+    <Compile Include="ComandaDetalleLN.cs" />
+    <Compile Include="ComandaLN.cs" />
+    <Compile Include="EstadoComandaLN.cs" />
+    <Compile Include="EstadoCuentaLN.cs" />
+    <Compile Include="MesaLN.cs" />
+    <Compile Include="MetodoPagoLN.cs" />
     <Compile Include="ProductoLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioLN.cs" />

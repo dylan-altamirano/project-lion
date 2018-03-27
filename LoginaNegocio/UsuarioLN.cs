@@ -31,6 +31,26 @@ namespace LoginaNegocio
             return Usuario;
         }
 
+        public static usuario SeleccionarUsuarioPorId(string id)
+        {
+            usuario Usuario = null;
+
+            SqlDataReader data = UsuarioDato.SeleccionarUsuarioPorId(id);
+
+            while (data.Read())
+            {
+                Usuario = new usuario();
+
+                Usuario.usuario_id = data["usuario_id"].ToString();
+                Usuario.nombreUsuario = data["nombre"].ToString();
+                Usuario.nombreCompleto = data["nombreCompleto"].ToString();
+                Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
+                Usuario.activo = Convert.ToBoolean(data["activo"]);
+            }
+
+            return Usuario;
+        }
+
         public static usuario AutenticarUsuario(usuario user)
         {
             usuario Usuario = null;

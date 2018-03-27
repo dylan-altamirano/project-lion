@@ -43,8 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaDato.cs" />
+    <Compile Include="ComandaDato.cs" />
+    <Compile Include="ComandaDetalleDato.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseFactory.cs" />
+    <Compile Include="EstadoComandaDato.cs" />
+    <Compile Include="EstadoCuentaDato.cs" />
+    <Compile Include="MesaDato.cs" />
+    <Compile Include="MetodoPagoDato.cs" />
     <Compile Include="ProductoDato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDato.cs" />

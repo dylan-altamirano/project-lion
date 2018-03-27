@@ -23,6 +23,18 @@ namespace Datos
             return reader;
         }
 
+        public static SqlDataReader SeleccionarUsuarioPorId(string id)
+        {
+            Database db = DatabaseFactory.CreateDatabase("Default");
+            SqlCommand comando = new SqlCommand("sp_obtener_usuario_por_id");
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@usuario_id", id);
+
+            SqlDataReader reader = db.ExecuteReader(comando);
+            return reader;
+        }
+
         /// <summary>
         /// Retorna un usuario si las credenciales coinciden con
         /// los datos guardados en la base de datos.
