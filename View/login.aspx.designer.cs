@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vista {
+namespace View {
     
     
-    public partial class ingreso {
+    public partial class login {
         
         /// <summary>
         /// form1 control.

@@ -22,7 +22,7 @@ namespace LoginaNegocio
                 Usuario = new usuario();
 
                 Usuario.usuario_id = data["usuario_id"].ToString();
-                Usuario.nombreUsuario = data["nombre"].ToString();
+                Usuario.nombreUsuario = data["nombreUsuario"].ToString();
                 Usuario.nombreCompleto = data["nombreCompleto"].ToString();
                 Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
                 Usuario.activo = Convert.ToBoolean(data["activo"]);
@@ -42,7 +42,7 @@ namespace LoginaNegocio
                 Usuario = new usuario();
 
                 Usuario.usuario_id = data["usuario_id"].ToString();
-                Usuario.nombreUsuario = data["nombre"].ToString();
+                Usuario.nombreUsuario = data["nombreUsuario"].ToString();
                 Usuario.nombreCompleto = data["nombreCompleto"].ToString();
                 Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
                 Usuario.activo = Convert.ToBoolean(data["activo"]);
@@ -62,7 +62,7 @@ namespace LoginaNegocio
                 Usuario = new usuario();
 
                 Usuario.usuario_id = data["usuario_id"].ToString();
-                Usuario.nombreUsuario = data["nombre"].ToString();
+                Usuario.nombreUsuario = data["nombreUsuario"].ToString();
                 Usuario.nombreCompleto = data["nombreCompleto"].ToString();
                 Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
                 Usuario.activo = Convert.ToBoolean(data["activo"]);

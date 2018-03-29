@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ingreso.aspx.cs" Inherits="View.ingreso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="View.login" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,9 @@
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;  charset=windows-1252" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web Development II - Final Project" />
-    <meta name="author" content="Dilan Altamirano" />
-    <title></title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Ingreso al Sistema</title>
     <link type="text/css" rel="stylesheet" href="Content/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
@@ -37,7 +37,7 @@
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ErrorMessage="Ingrese una contraseña válida" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="cmdIngresar" runat="server" Text="INGRESAR" CssClass="btn btn-primary" />
+                                        <asp:Button ID="cmdIngresar" runat="server" Text="Ingresar" CssClass="btn btn-primary" OnClick="cmdIngresar_Click"/>
                                     </div>
                                 </fieldset>
 

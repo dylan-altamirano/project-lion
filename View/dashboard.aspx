@@ -15,7 +15,7 @@
             <div class="card-body">
                 <p class="card-title"><strong>Gestion de Mesas</strong></p>
                 <div class="card-text">
-                    <button type="button" class="btn btn-light"><i class="fas fa-utensils" style="font-size:150px"></i></button>
+                    <button type="button" class="btn btn-light"><i class="fas fa-utensils" style="font-size:150px"></i></button>        
                 </div>
             </div>
         </div>
