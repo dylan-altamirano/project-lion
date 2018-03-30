@@ -15,11 +15,16 @@ namespace View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Usuario = new usuario();
+            if (!this.IsPostBack)
+            {
+                
+            }
+  
         }
 
         protected void cmdIngresar_Click(object sender, EventArgs e)
         {
+            this.Usuario = new usuario();
 
             this.Usuario.nombreUsuario = txtUsuario.Text;
             this.Usuario.clave = txtPassword.Text;

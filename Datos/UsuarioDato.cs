@@ -11,6 +11,21 @@ namespace Datos
 {
     public class UsuarioDato
     {
+
+        public static DataSet SeleccionarTodos(string cargo)
+        {
+            Database db = DatabaseFactory.CreateDatabase("Default");
+            SqlCommand comando = new SqlCommand("sp_obtener_usuarios_por_cargo");
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@cargo", cargo);
+            
+
+            DataSet ds = db.ExecuteReader(comando, "usuario");
+            return ds;
+        }
+
+
         public static SqlDataReader SeleccionarUsuario(string nombre)
         {
             Database db = DatabaseFactory.CreateDatabase("Default");

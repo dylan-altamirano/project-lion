@@ -12,13 +12,18 @@ namespace Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            usuario Usuario = new usuario();
+            if (!this.IsPostBack)
+            {
+                usuario Usuario = new usuario();
 
-            Usuario = (usuario)Session["usuarioLogueado"];
+                Usuario = (usuario)Session["usuarioLogueado"];
 
 
-            lblUsuarioActivo.Text = "Bievenido "+ Usuario.nombreUsuario;
-            lblUsuarioActivo.Text.Equals(System.Drawing.FontStyle.Italic);
+                lblUsuarioActivo.Text = "Bievenido " + Usuario.nombreUsuario;
+                lblUsuarioActivo.Text.Equals(System.Drawing.FontStyle.Italic);
+            }
+
+            
         }
     }
 }

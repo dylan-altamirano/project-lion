@@ -96,6 +96,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gestion-perfiles.aspx" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestion-perfiles.aspx.cs">
+      <DependentUpon>gestion-perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestion-perfiles.aspx.designer.cs">
+      <DependentUpon>gestion-perfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

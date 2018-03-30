@@ -6,11 +6,33 @@ using System.Threading.Tasks;
 using Entidades;
 using Datos;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace LoginaNegocio
 {
     public class UsuarioLN
     {
+        public static List<usuario> ObtenerTodos(string cargo)
+        {
+            List<usuario> lista = new List<usuario>();
+            DataSet ds = UsuarioDato.SeleccionarTodos(cargo);
+
+            foreach (DataRow fila in ds.Tables[0].Rows)
+            {
+                usuario registro = new usuario();
+
+                registro.usuario_id = fila["usuario_id"].ToString();
+                registro.nombreUsuario = fila["nombreUsuario"].ToString();
+                registro.nombreCompleto = fila["nombreCompleto"].ToString();
+                registro.rolUsuario = (rol)Enum.Parse(typeof(rol), fila["rol"].ToString());
+                registro.activo = Convert.ToBoolean(fila["activo"]);
+
+                lista.Add(registro);
+            }
+            return lista;
+        }
+
+
         public static usuario SeleccionarUsuario(string nombre)
         {
             usuario Usuario = null;

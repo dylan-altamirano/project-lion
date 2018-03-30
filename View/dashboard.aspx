@@ -5,7 +5,7 @@
             <div class="card-body">
                 <p class="card-title"><strong>Gestion de Perfiles</strong></p>
                 <div class="card-text">
-                    <button type="button" class="btn btn-light"><i class="fas fa-users" style="font-size:150px"></i></button>
+                    <button type="button" class="btn btn-light" onclick="document.location.href='gestion-perfiles.aspx'"><i class="fas fa-users" style="font-size:150px"></i></button>
                 </div>
             </div>
         </div>
