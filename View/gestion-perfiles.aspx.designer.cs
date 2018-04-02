@@ -85,13 +85,13 @@ namespace View {
         protected global::System.Web.UI.WebControls.TextBox txtNombreCompleto;
         
         /// <summary>
-        /// rqfFecha control.
+        /// rqfNCompleto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfFecha;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfNCompleto;
         
         /// <summary>
         /// lblRol control.
@@ -148,13 +148,67 @@ namespace View {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rdfClave;
         
         /// <summary>
-        /// cmdRegistrarUsuario control.
+        /// cmdGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdRegistrarUsuario;
+        protected global::System.Web.UI.WebControls.Button cmdGuardar;
+        
+        /// <summary>
+        /// lblBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBuscar;
+        
+        /// <summary>
+        /// DropDownList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// rdfBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rdfBuscar;
+        
+        /// <summary>
+        /// txtBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
+        
+        /// <summary>
+        /// rqfBuscarTextField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfBuscarTextField;
+        
+        /// <summary>
+        /// cmdBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdBuscar;
         
         /// <summary>
         /// grvUsuarios control.

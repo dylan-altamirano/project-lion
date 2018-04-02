@@ -75,9 +75,9 @@ namespace Datos
             SqlCommand comando = new SqlCommand("sp_crear_usuario");
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@usuario_id", Usuario.usuario_id);
-            comando.Parameters.AddWithValue("@nombreUsuario", Usuario.nombreUsuario);
+            comando.Parameters.AddWithValue("@nombre", Usuario.nombreUsuario);
             comando.Parameters.AddWithValue("@nombreCompleto", Usuario.nombreCompleto);
-            comando.Parameters.AddWithValue("@rol", Usuario.rolUsuario);
+            comando.Parameters.AddWithValue("@rol", Usuario.rolUsuario.ToString());
             comando.Parameters.AddWithValue("@clave", Usuario.clave);
             comando.Parameters.AddWithValue("@activo", Usuario.activo);
            
@@ -92,9 +92,9 @@ namespace Datos
             SqlCommand comando = new SqlCommand("sp_modificar_usuario");
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@usuario_id", Usuario.usuario_id);
-            comando.Parameters.AddWithValue("@nombreUsuario", Usuario.nombreUsuario);
+            comando.Parameters.AddWithValue("@nombre", Usuario.nombreUsuario);
             comando.Parameters.AddWithValue("@nombreCompleto", Usuario.nombreCompleto);
-            comando.Parameters.AddWithValue("@rol", Usuario.rolUsuario);
+            comando.Parameters.AddWithValue("@rol", Usuario.rolUsuario.ToString());
             comando.Parameters.AddWithValue("@clave", Usuario.clave);
             comando.Parameters.AddWithValue("@activo", Usuario.activo);
 
