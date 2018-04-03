@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace View {
+namespace Vista {
     
     
     public partial class gestion_perfiles {

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Entidades;
 using LoginaNegocio;
 
-namespace View
+namespace Vista
 {
     public partial class gestion_perfiles : System.Web.UI.Page
     {

@@ -96,6 +96,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gestion-mesas.aspx" />
     <Content Include="gestion-perfiles.aspx" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
@@ -104,6 +105,7 @@
     </Content>
     <Content Include="scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="scripts\jquery-3.0.0.min.map" />
+    <Content Include="Mesa.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,6 +188,13 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="gestion-mesas.aspx.cs">
+      <DependentUpon>gestion-mesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestion-mesas.aspx.designer.cs">
+      <DependentUpon>gestion-mesas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gestion-perfiles.aspx.cs">
       <DependentUpon>gestion-perfiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +211,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mesa.master.cs">
+      <DependentUpon>Mesa.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mesa.master.designer.cs">
+      <DependentUpon>Mesa.master</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
