@@ -39,7 +39,10 @@ namespace Vista
                 Response.Redirect("dashboard.aspx");
             }else
             {
-                Response.Redirect("login.aspx");
+                lblErrorMessage.Text = "El usuario o la contraseña ingresados parecen ser inválidos";
+                lblErrorMessage.CssClass = "alert alert-warning form-control";
+
+                Response.AppendHeader("Refresh", "1;url=login.aspx");
             }
 
         }

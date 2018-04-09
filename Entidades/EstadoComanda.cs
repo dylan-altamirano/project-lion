@@ -13,8 +13,8 @@ namespace Entidades
 
         public EstadoComanda()
         {
-            this.estadoComanda_id = "";
-            this.descripcion = "";
+            this.estadoComanda_id = "RE";
+            this.descripcion = "Registrada";
         }
 
         public EstadoComanda(string estadoComanda_id, string descripcion)

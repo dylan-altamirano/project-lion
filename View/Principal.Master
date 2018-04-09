@@ -19,7 +19,7 @@
 <body>
     
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManagerPrincipal" runat="server"></asp:ScriptManager>
+        <asp:ScriptManager ID="ScriptManagerPrincipal" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <div class="container">
             <!--NAVIGATION-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -60,5 +60,38 @@
     <script src="scripts/jquery-3.0.0.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/popper.min.js"></script>
+     
+
+    <script type="text/javascript">
+
+        function getCurrentDate() {
+            var currentDate;
+
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            currentDate = new Date();
+            var text = months[currentDate.getMonth()] + ', ' + currentDate.getDate() + ' ' + currentDate.getFullYear();
+            return text;
+        }
+
+        function getSession(idMesa) {
+
+
+            document.getElementById('ContentPlaceHolder1_ContentPlaceHolderMesaDashboard_txtMesa_id').value = idMesa;
+
+           document.getElementById('ContentPlaceHolder1_ContentPlaceHolderMesaDashboard_txtFecha').value = getCurrentDate();
+ 
+
+        }
+
+        function getMesaId(id) {
+
+            document.getElementById('ContentPlaceHolder1_ContentPlaceHolderMesaDashboard_txtMesaId2').value = id;
+            
+        }
+
+    </script>
+
+
 </body>
 </html>

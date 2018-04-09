@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vista {
+namespace View {
     
     
-    public partial class Mesa {
+    public partial class crear_mesa {
         
         /// <summary>
-        /// cmdCrearMesa control.
+        /// lblOcupado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdCrearMesa;
+        protected global::System.Web.UI.WebControls.Label lblOcupado;
         
         /// <summary>
-        /// cmdBuscar control.
+        /// rblOcupado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdBuscar;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblOcupado;
         
         /// <summary>
-        /// cmdCancelar control.
+        /// lblActivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdCancelar;
+        protected global::System.Web.UI.WebControls.Label lblActivo;
         
         /// <summary>
-        /// ContentPlaceHolderMesaDashboard control.
+        /// rblActivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderMesaDashboard;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblActivo;
+        
+        /// <summary>
+        /// cmdGuardarMesa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdGuardarMesa;
     }
 }

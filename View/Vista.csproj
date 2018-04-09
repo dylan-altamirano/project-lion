@@ -96,6 +96,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="asignar-mesa.aspx" />
+    <Content Include="buscar-mesa.aspx" />
+    <Content Include="crear-mesa.aspx" />
     <Content Include="gestion-mesas.aspx" />
     <Content Include="gestion-perfiles.aspx" />
     <Content Include="login.aspx" />
@@ -181,6 +184,27 @@
     <Content Include="scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="asignar-mesa.aspx.cs">
+      <DependentUpon>asignar-mesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asignar-mesa.aspx.designer.cs">
+      <DependentUpon>asignar-mesa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="buscar-mesa.aspx.cs">
+      <DependentUpon>buscar-mesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="buscar-mesa.aspx.designer.cs">
+      <DependentUpon>buscar-mesa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="crear-mesa.aspx.cs">
+      <DependentUpon>crear-mesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crear-mesa.aspx.designer.cs">
+      <DependentUpon>crear-mesa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

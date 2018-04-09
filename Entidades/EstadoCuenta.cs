@@ -14,9 +14,9 @@ namespace Entidades
 
         public EstadoCuenta()
         {
-            this.estadoCuenta_id = "";
-            this.descripcion = "";
-            this.activo = false;
+            this.estadoCuenta_id = "CXP";
+            this.descripcion = "Cuenta por Pagar";
+            this.activo = true;
         }
 
         public EstadoCuenta(string estadoCuenta_id, string descripcion, bool activo)

@@ -11,7 +11,31 @@ namespace Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
 
+                string childPage = this.ContentPlaceHolderMesaDashboard.Page.GetType().BaseType.FullName;
+
+                if (childPage.Equals("View.buscar_mesa")|| childPage.Equals("View.crear_mesa"))
+                {
+                    cmdCancelar.Visible = true;
+                }
+            }
+        }
+
+        protected void cmdCrearMesa_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("crear-mesa.aspx");
+        }
+
+        protected void cmdBuscar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("buscar-mesa.aspx");
+        }
+
+        protected void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("gestion-mesas.aspx");
         }
     }
 }

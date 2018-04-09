@@ -41,7 +41,7 @@ namespace Datos
             SqlCommand comando = new SqlCommand("sp_crear_comanda");
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@estadoComanda", comanda.estadoComanda.estadoComanda_id);
+            comando.Parameters.AddWithValue("@estadoComanda_id", comanda.estadoComanda.estadoComanda_id);
             comando.Parameters.AddWithValue("@mesa_id", comanda.mesa.mesa_id);
             comando.Parameters.AddWithValue("@estadoCuenta_id", comanda.estadoCuenta.estadoCuenta_id);
             comando.Parameters.AddWithValue("@nombreCliente", comanda.nombreCliente);

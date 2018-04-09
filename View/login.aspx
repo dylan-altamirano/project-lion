@@ -17,7 +17,17 @@
 <body>
     <form id="form1" runat="server">
 
+        <!--MESSAGE SECTION-->
         <div class="container" style="margin-top: 2%; padding-top: 1%;">
+            <div class="row">
+                <div class="col-lg-12" style="margin: 1%">
+                    <div class="form-group">
+                        <asp:Label ID="lblErrorMessage" runat="server" Text="" EnableViewState="false"></asp:Label>
+                    </div>
+                </div>
+            </div>
+
+            <!--LOGIN FORM-->
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
