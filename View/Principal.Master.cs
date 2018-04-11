@@ -21,6 +21,13 @@ namespace Vista
 
                 lblUsuarioActivo.Text = "Bievenido " + Usuario.nombreUsuario;
                 lblUsuarioActivo.Text.Equals(System.Drawing.FontStyle.Italic);
+
+                string childPage = this.ContentPlaceHolder1.Page.GetType().BaseType.FullName;
+
+                if (childPage.Equals("Vista.gestion_mesas") || childPage.Equals("View.administrar_comanda") || childPage.Equals("View.menu_productos"))
+                {
+                    lblGestionMesas.Visible = true;
+                }
             }
 
             

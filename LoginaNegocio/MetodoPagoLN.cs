@@ -32,18 +32,34 @@ namespace LoginaNegocio
         {
             MetodoPago metodoPago = null;
 
-            SqlDataReader data = MetodoPagoDato.SeleccionarMetodoPago(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                metodoPago = new MetodoPago();
+                data = MetodoPagoDato.SeleccionarMetodoPago(id);
 
-                metodoPago.metodoPago_id = data["metodoPago_id"].ToString();
-                metodoPago.description = data["descripcion"].ToString();
+                while (data.Read())
+                {
+                    metodoPago = new MetodoPago();
 
+                    metodoPago.metodoPago_id = data["metodoPago_id"].ToString();
+                    metodoPago.description = data["descripcion"].ToString();
+
+                }
+
+                return metodoPago;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-            return metodoPago;
+            
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Datos
         public static SqlDataReader SeleccionarEstadoCuenta(string id)
         {
             Database db = DatabaseFactory.CreateDatabase("Default");
-            SqlCommand comando = new SqlCommand("sp_seleccionar_estado_cuenta_todos");
+            SqlCommand comando = new SqlCommand("sp_seleccionar_estado_cuenta");
             comando.CommandType = CommandType.StoredProcedure;
 
             comando.Parameters.AddWithValue("@estadoCuenta_id", id);

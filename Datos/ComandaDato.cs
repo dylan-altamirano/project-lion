@@ -35,6 +35,18 @@ namespace Datos
             return reader;
         }
 
+        public static SqlDataReader SeleccionarComandaSegunMesaAsignada(string id)
+        {
+            Database db = DatabaseFactory.CreateDatabase("Default");
+            SqlCommand comando = new SqlCommand("sp_seleccionar_comanda_segun_mesa_actual");
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@mesa_id", id);
+
+            SqlDataReader reader = db.ExecuteReader(comando);
+            return reader;
+        }
+
         public static void Insertar(Comanda comanda)
         {
             Database db = DatabaseFactory.CreateDatabase("Default");
@@ -58,7 +70,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
 
             comando.Parameters.AddWithValue("@comanda_id", comanda.comanda_id);
-            comando.Parameters.AddWithValue("@estadoComanda", comanda.estadoComanda.estadoComanda_id);
+            comando.Parameters.AddWithValue("@estadoComanda_id", comanda.estadoComanda.estadoComanda_id);
             comando.Parameters.AddWithValue("@mesa_id", comanda.mesa.mesa_id);
             comando.Parameters.AddWithValue("@estadoCuenta_id", comanda.estadoCuenta.estadoCuenta_id);
             comando.Parameters.AddWithValue("@nombreCliente", comanda.nombreCliente);

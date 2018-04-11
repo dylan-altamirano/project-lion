@@ -98,12 +98,44 @@ namespace Vista
 
         protected void cmdOrdenar_Click(object sender, EventArgs e)
         {
-
+            Session["mesa_id"] = txtMesaId2.Text;
+            Response.Redirect("administrar-comanda.aspx");
         }
 
         protected void cmdFacturar_Click(object sender, EventArgs e)
         {
+            Session["mesa_id"] = txtMesaId2.Text;
+            if (esFacturable((string) Session["mesa_id"]))
+            {
+                Response.Redirect("administrar-comanda.aspx");
+            }else
+            {
+                lblErrorMessageMesaMaster.Text = "La comanda seleccionada no se puede facturar todavía. Finalice la comanda primero para proceder.";
+                lblErrorMessageMesaMaster.CssClass = "alert alert-warning";
+                Response.AppendHeader("Refresh", "2;url=gestion-mesas.aspx");
 
+            }
+        }
+
+        private bool esFacturable(string idMesa)
+        {
+            Comanda comanda = new Comanda();
+
+            comanda = ComandaLN.SeleccionarComandaSegunMesaAsignada(idMesa);
+
+            if (comanda != null)
+            {
+                comanda.estadoComanda = EstadoComandaLN.SeleccionarEstadoComanda(comanda.estadoComanda.estadoComanda_id);
+                comanda.mesa = MesaLN.SeleccionarMesa(comanda.mesa.mesa_id);
+                comanda.estadoCuenta = EstadoCuentaLN.SeleccionarEstadoCuenta(comanda.estadoCuenta.estadoCuenta_id);
+            }
+
+            if (comanda.estadoComanda.estadoComanda_id.Equals("DE"))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-material-design.min.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,15 +40,15 @@
 
                                 <fieldset>
                                     <div class="form-group">
-                                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" BorderStyle="Solid"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorUsuario" runat="server" ErrorMessage="Ingrese un usuario válido" ControlToValidate="txtUsuario"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
-                                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" BorderStyle="Solid"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ErrorMessage="Ingrese una contraseña válida" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="cmdIngresar" runat="server" Text="Ingresar" CssClass="btn btn-primary" OnClick="cmdIngresar_Click"/>
+                                        <asp:Button ID="cmdIngresar" runat="server" Text="Ingresar" CssClass="btn btn-raised btn-dark" OnClick="cmdIngresar_Click"/>
                                     </div>
                                 </fieldset>
 
@@ -80,7 +81,8 @@
     <script src="scripts/jquery-3.0.0.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/popper.min.js"></script>
-
+    <script src="scripts/bootstrap-material-design.js"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
     <script>
 
         $('#txtUsuario').attr("placeholder", "Nombre de Usuario");

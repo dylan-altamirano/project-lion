@@ -12,6 +12,8 @@ namespace Datos
 {
     public class DatabaseFactory
     {
+       
+
         // nombre = nombre de la cadena de conexion almacenada en el web.config
         public static Database CreateDatabase(string nombre)
         {
@@ -45,6 +47,7 @@ namespace Datos
                 throw ex;
 
             }
+            
 
         }
 

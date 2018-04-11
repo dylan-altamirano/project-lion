@@ -57,15 +57,20 @@ namespace Datos
         /// <returns></returns>
         public static SqlDataReader AutenticarUsuario(usuario Usuario)
         {
-            Database db = DatabaseFactory.CreateDatabase("Default");
-            SqlCommand comando = new SqlCommand("sp_autenticar_usuario");
-            comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Usuario", Usuario.nombreUsuario);
-            comando.Parameters.AddWithValue("@passwordp", Usuario.clave);
+                Database db = DatabaseFactory.CreateDatabase("Default");
 
-            SqlDataReader reader = db.ExecuteReader(comando);
-            return reader;
+                SqlCommand comando = new SqlCommand("sp_autenticar_usuario");
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Usuario", Usuario.nombreUsuario);
+                comando.Parameters.AddWithValue("@passwordp", Usuario.clave);
+
+                SqlDataReader reader = db.ExecuteReader(comando);
+
+
+                return reader;
+          
         }
 
         //Inserta un nuevo alquiler

@@ -13,31 +13,31 @@ namespace Vista {
     public partial class Mesa {
         
         /// <summary>
-        /// cmdCrearMesa control.
+        /// cmdNuevaMesa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdCrearMesa;
+        protected global::System.Web.UI.WebControls.Button cmdNuevaMesa;
         
         /// <summary>
-        /// cmdBuscar control.
+        /// cmdBuscarMesa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdBuscar;
+        protected global::System.Web.UI.WebControls.Button cmdBuscarMesa;
         
         /// <summary>
-        /// cmdCancelar control.
+        /// cmdCancelarOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdCancelar;
+        protected global::System.Web.UI.WebControls.Button cmdCancelarOperacion;
         
         /// <summary>
         /// ContentPlaceHolderMesaDashboard control.

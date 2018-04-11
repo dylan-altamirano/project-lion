@@ -1,9 +1,10 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Mesa.master.cs" Inherits="Vista.Mesa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ 
     <div class="col-lg-12" style="margin:2%">
-        <asp:Button ID="cmdCrearMesa" runat="server" CssClass="btn btn-dark" Text="Crear Mesa" OnClick="cmdCrearMesa_Click" />
-        <asp:Button ID="cmdBuscar" runat="server" CssClass="btn btn-dark" Text="Buscar Mesa" OnClick="cmdBuscar_Click"/>
-        <asp:Button ID="cmdCancelar" runat="server" Text="Cancelar" CssClass="btn btn-dark" OnClick="cmdCancelar_Click" Visible="false" />
+        <asp:Button ID="cmdNuevaMesa" runat="server" Text="Crear Mesa" CssClass="btn btn-raised btn-lg btn-dark"  OnClick="cmdNuevaMesa_Click" ValidationGroup="mesaMaster"/>
+        <asp:Button ID="cmdBuscarMesa" runat="server" Text="Buscar Mesa" CssClass="btn btn-raised btn-lg btn-dark" OnClick="cmdBuscarMesa_Click" ValidationGroup="mesaMaster"/>
+        <asp:Button ID="cmdCancelarOperacion" runat="server" Text="Cancelar" CssClass="btn btn-raised btn-lg btn-dark" OnClick="cmdCancelarOperacion_Click"  Visible="false" ValidationGroup="mesaMaster"/>
     </div>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolderMesaDashboard" runat="server">

@@ -21,7 +21,7 @@ namespace LoginaNegocio
             {
                 Categoria registro = new Categoria();
                 registro.categoria_id = fila["categoria_id"].ToString();
-                registro.nombreCategoria = fila["nombre"].ToString();
+                registro.nombreCategoria = fila["nombreCategoria"].ToString();
                 registro.activo = Convert.ToBoolean(fila["activo"]);
 
                 lista.Add(registro);
@@ -33,18 +33,34 @@ namespace LoginaNegocio
         {
             Categoria categoria = null;
 
-            SqlDataReader data = CategoriaDato.SeleccionarCategoria(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                categoria = new Categoria();
+                data = CategoriaDato.SeleccionarCategoria(id);
 
-                categoria.categoria_id = data["categoria_id"].ToString();
-                categoria.nombreCategoria = data["nombre"].ToString();
-                categoria.activo = Convert.ToBoolean(data["activo"]);
+                while (data.Read())
+                {
+                    categoria = new Categoria();
+
+                    categoria.categoria_id = data["categoria_id"].ToString();
+                    categoria.nombreCategoria = data["nombreCategoria"].ToString();
+                    categoria.activo = Convert.ToBoolean(data["activo"]);
+                }
+
+                return categoria;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-            return categoria;
+            
         }
     }
 }

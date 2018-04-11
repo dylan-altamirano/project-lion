@@ -16,3 +16,6 @@ footer{
     padding: 1.5em 2em;
 }
 
+.no-border-custom{
+    border-bottom:none;
+}

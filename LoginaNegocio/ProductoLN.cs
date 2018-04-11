@@ -22,7 +22,7 @@ namespace LoginaNegocio
                 Producto registro = new Producto();
                 registro.descripcion = fila["descripcion"].ToString();
                 registro.nombreProducto = fila["nombreProducto"].ToString();
-                registro.precio = Convert.ToDouble(fila["@precio"]);
+                registro.precio = Convert.ToDouble(fila["precio"]);
                 registro.activo = Convert.ToBoolean(fila["activo"]);
 
                 registro.categoria = CategoriaLN.SeleccionarCategoria(fila["categoria_id"].ToString());
@@ -41,9 +41,10 @@ namespace LoginaNegocio
             foreach (DataRow fila in ds.Tables[0].Rows)
             {
                 Producto registro = new Producto();
+                registro.producto_id = fila["producto_id"].ToString();
                 registro.descripcion = fila["descripcion"].ToString();
                 registro.nombreProducto = fila["nombreProducto"].ToString();
-                registro.precio = Convert.ToDouble(fila["@precio"]);
+                registro.precio = Convert.ToDouble(fila["precio"]);
                 registro.activo = Convert.ToBoolean(fila["activo"]);
 
                 registro.categoria = CategoriaLN.SeleccionarCategoria(fila["categoria_id"].ToString());
@@ -58,21 +59,37 @@ namespace LoginaNegocio
         {
             Producto producto = null;
 
-            SqlDataReader data = ProductoDato.SeleccionarProducto(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                producto = new Producto();
+                data = ProductoDato.SeleccionarProducto(id);
 
-                producto.producto_id = data["producto_id"].ToString();
-                producto.nombreProducto = data["nombreProducto"].ToString();
-                producto.precio = Convert.ToDouble(data["@precio"]);
-                producto.activo = Convert.ToBoolean(data["activo"]);
+                while (data.Read())
+                {
+                    producto = new Producto();
 
-                producto.categoria = CategoriaLN.SeleccionarCategoria(data["categoria_id"].ToString());
+                    producto.producto_id = data["producto_id"].ToString();
+                    producto.nombreProducto = data["nombreProducto"].ToString();
+                    producto.precio = Convert.ToDouble(data["precio"]);
+                    producto.activo = Convert.ToBoolean(data["activo"]);
+
+                    producto.categoria = CategoriaLN.SeleccionarCategoria(data["categoria_id"].ToString());
+                }
+
+                return producto;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-            return producto;
+           
         }
 
         public static void Nuevo(Producto producto)

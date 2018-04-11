@@ -16,6 +16,7 @@ namespace Datos
             SqlCommand comando = new SqlCommand("sp_obtener_categorias");
             comando.CommandType = CommandType.StoredProcedure;
             DataSet ds = db.ExecuteReader(comando, "categoria");
+
             return ds;
         }
 

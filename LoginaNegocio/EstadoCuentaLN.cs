@@ -32,19 +32,35 @@ namespace LoginaNegocio
         {
             EstadoCuenta estadoCuenta = null;
 
-            SqlDataReader data = EstadoCuentaDato.SeleccionarEstadoCuenta(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                estadoCuenta = new EstadoCuenta();
+                data = EstadoCuentaDato.SeleccionarEstadoCuenta(id);
 
-                estadoCuenta.estadoCuenta_id = data["estadoCuenta_id"].ToString();
-                estadoCuenta.descripcion = data["descripcion"].ToString();
+                while (data.Read())
+                {
+                    estadoCuenta = new EstadoCuenta();
 
+                    estadoCuenta.estadoCuenta_id = data["estadoCuenta_id"].ToString();
+                    estadoCuenta.descripcion = data["descripcion"].ToString();
+
+                }
+
+
+                return estadoCuenta;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-
-            return estadoCuenta;
+            
         }
     }
 }

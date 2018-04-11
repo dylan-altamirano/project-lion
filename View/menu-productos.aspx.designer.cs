@@ -7,126 +7,135 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vista {
+namespace View {
     
     
-    public partial class gestion_mesas {
+    public partial class menu_productos {
         
         /// <summary>
-        /// lblErrorMessageMesaMaster control.
+        /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMessageMesaMaster;
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
         
         /// <summary>
-        /// lblMesa control.
+        /// lblFiltrado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMesa;
+        protected global::System.Web.UI.WebControls.Label lblFiltrado;
         
         /// <summary>
-        /// txtMesa_id control.
+        /// cboCategorias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMesa_id;
+        protected global::System.Web.UI.WebControls.DropDownList cboCategorias;
         
         /// <summary>
-        /// lblNombreCliente control.
+        /// rdfBuscarCategorias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreCliente;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rdfBuscarCategorias;
         
         /// <summary>
-        /// txtNombreCliente control.
+        /// cmdBuscarProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCliente;
+        protected global::System.Web.UI.WebControls.Button cmdBuscarProductos;
         
         /// <summary>
-        /// rdfNombreCliente control.
+        /// cmdRegresar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rdfNombreCliente;
+        protected global::System.Web.UI.WebControls.Button cmdRegresar;
         
         /// <summary>
-        /// lblFecha control.
+        /// lblProductoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFecha;
+        protected global::System.Web.UI.WebControls.Label lblProductoID;
         
         /// <summary>
-        /// txtFecha control.
+        /// txtProductoID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecha;
+        protected global::System.Web.UI.WebControls.TextBox txtProductoID;
         
         /// <summary>
-        /// cmdAsignarMesa control.
+        /// lblNotas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdAsignarMesa;
+        protected global::System.Web.UI.WebControls.Label lblNotas;
         
         /// <summary>
-        /// lblMesaId2 control.
+        /// txaNotas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMesaId2;
+        protected global::System.Web.UI.WebControls.TextBox txaNotas;
         
         /// <summary>
-        /// txtMesaId2 control.
+        /// lblCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMesaId2;
+        protected global::System.Web.UI.WebControls.Label lblCantidad;
         
         /// <summary>
-        /// cmdOrdenar control.
+        /// txtCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdOrdenar;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
         
         /// <summary>
-        /// cmdFacturar control.
+        /// rgvCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdFacturar;
+        protected global::System.Web.UI.WebControls.RangeValidator rgvCantidad;
+        
+        /// <summary>
+        /// cmdAfirmacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdAfirmacion;
     }
 }

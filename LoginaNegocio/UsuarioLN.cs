@@ -15,21 +15,34 @@ namespace LoginaNegocio
         public static List<usuario> ObtenerTodos(string cargo)
         {
             List<usuario> lista = new List<usuario>();
-            DataSet ds = UsuarioDato.SeleccionarTodos(cargo);
 
-            foreach (DataRow fila in ds.Tables[0].Rows)
+            DataSet ds = null;
+
+            try
             {
-                usuario registro = new usuario();
+                ds = UsuarioDato.SeleccionarTodos(cargo);
 
-                registro.usuario_id = fila["usuario_id"].ToString();
-                registro.nombreUsuario = fila["nombreUsuario"].ToString();
-                registro.nombreCompleto = fila["nombreCompleto"].ToString();
-                registro.rolUsuario = (rol)Enum.Parse(typeof(rol), fila["rol"].ToString());
-                registro.activo = Convert.ToBoolean(fila["activo"]);
+                foreach (DataRow fila in ds.Tables[0].Rows)
+                {
+                    usuario registro = new usuario();
 
-                lista.Add(registro);
+                    registro.usuario_id = fila["usuario_id"].ToString();
+                    registro.nombreUsuario = fila["nombreUsuario"].ToString();
+                    registro.nombreCompleto = fila["nombreCompleto"].ToString();
+                    registro.rolUsuario = (rol)Enum.Parse(typeof(rol), fila["rol"].ToString());
+                    registro.activo = Convert.ToBoolean(fila["activo"]);
+
+                    lista.Add(registro);
+                }
+                return lista;
             }
-            return lista;
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
+            
         }
 
 
@@ -37,60 +50,108 @@ namespace LoginaNegocio
         {
             usuario Usuario = null;
 
-            SqlDataReader data = UsuarioDato.SeleccionarUsuario(nombre);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                Usuario = new usuario();
+                data = UsuarioDato.SeleccionarUsuario(nombre);
 
-                Usuario.usuario_id = data["usuario_id"].ToString();
-                Usuario.nombreUsuario = data["nombreUsuario"].ToString();
-                Usuario.nombreCompleto = data["nombreCompleto"].ToString();
-                Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
-                Usuario.activo = Convert.ToBoolean(data["activo"]);
+                while (data.Read())
+                {
+                    Usuario = new usuario();
+
+                    Usuario.usuario_id = data["usuario_id"].ToString();
+                    Usuario.nombreUsuario = data["nombreUsuario"].ToString();
+                    Usuario.nombreCompleto = data["nombreCompleto"].ToString();
+                    Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
+                    Usuario.activo = Convert.ToBoolean(data["activo"]);
+                }
+
+                return Usuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-            return Usuario;
+           
         }
 
         public static usuario SeleccionarUsuarioPorId(string id)
         {
             usuario Usuario = null;
 
-            SqlDataReader data = UsuarioDato.SeleccionarUsuarioPorId(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                Usuario = new usuario();
+                data = UsuarioDato.SeleccionarUsuarioPorId(id);
 
-                Usuario.usuario_id = data["usuario_id"].ToString();
-                Usuario.nombreUsuario = data["nombreUsuario"].ToString();
-                Usuario.nombreCompleto = data["nombreCompleto"].ToString();
-                Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
-                Usuario.activo = Convert.ToBoolean(data["activo"]);
+                while (data.Read())
+                {
+                    Usuario = new usuario();
+
+                    Usuario.usuario_id = data["usuario_id"].ToString();
+                    Usuario.nombreUsuario = data["nombreUsuario"].ToString();
+                    Usuario.nombreCompleto = data["nombreCompleto"].ToString();
+                    Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
+                    Usuario.activo = Convert.ToBoolean(data["activo"]);
+                }
+
+                return Usuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-            return Usuario;
+            
         }
 
         public static usuario AutenticarUsuario(usuario user)
         {
             usuario Usuario = null;
 
-            SqlDataReader data = UsuarioDato.AutenticarUsuario(user);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                Usuario = new usuario();
+                data = UsuarioDato.AutenticarUsuario(user);
 
-                Usuario.usuario_id = data["usuario_id"].ToString();
-                Usuario.nombreUsuario = data["nombreUsuario"].ToString();
-                Usuario.nombreCompleto = data["nombreCompleto"].ToString();
-                Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
-                Usuario.activo = Convert.ToBoolean(data["activo"]);
+                while (data.Read())
+                {
+                    Usuario = new usuario();
+
+                    Usuario.usuario_id = data["usuario_id"].ToString();
+                    Usuario.nombreUsuario = data["nombreUsuario"].ToString();
+                    Usuario.nombreCompleto = data["nombreCompleto"].ToString();
+                    Usuario.rolUsuario = (rol)Enum.Parse(typeof(rol), data["rol"].ToString());
+                    Usuario.activo = Convert.ToBoolean(data["activo"]);
+                }
+
+                return Usuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-            return Usuario;
+            
         }
 
         public static void Nuevo(usuario Usuario)

@@ -14,6 +14,7 @@
     <link type="text/css" rel="stylesheet" href="css/fontawesome-all.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-material-design.min.css" />
     <script src="scripts/fontawesome-all.js"></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
         <div class="container">
             <!--NAVIGATION-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Sistema Restaurante</a>
+                <a class="navbar-brand" href="dashboard.aspx">Sistema Restaurante</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,6 +36,9 @@
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="gestion-mesas.aspx"> <asp:Label ID="lblGestionMesas" runat="server" Text="GestionMesas" CssClass="nav-link" Visible="false"></asp:Label></a>
                         </li>
                     </ul>
                 </div>
@@ -60,7 +64,8 @@
     <script src="scripts/jquery-3.0.0.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/popper.min.js"></script>
-     
+     <script src="scripts/bootstrap-material-design.js"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
     <script type="text/javascript">
 
@@ -83,11 +88,23 @@
  
 
         }
-
+        // Obtiene el id de la mesa seleccionada y lo asigna al cuadro de texto del cuadro modal correspondiente al ID de la mesa
         function getMesaId(id) {
 
             document.getElementById('ContentPlaceHolder1_ContentPlaceHolderMesaDashboard_txtMesaId2').value = id;
             
+        }
+
+        // Obtiene el id del producto seleccionado y lo asigna al cuadro de texto del cuadro modal correspondiente al ID del producto
+        function getProductoId(id) {
+
+            document.getElementById('ContentPlaceHolder1_txtProductoID').value = id;
+
+        }
+
+
+        function ShowPopup() {
+            $("#btnShowPopup").click();
         }
 
     </script>

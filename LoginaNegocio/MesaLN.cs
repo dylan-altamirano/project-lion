@@ -33,20 +33,36 @@ namespace LoginaNegocio
         {
             Mesa mesa = null;
 
-            SqlDataReader data = MesaDato.SeleccionarMesa(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                mesa = new Mesa();
+                data = MesaDato.SeleccionarMesa(id);
 
-                mesa.mesa_id = data["mesa_id"].ToString();
-                mesa.ocupado = Convert.ToBoolean(data["ocupado"]);
-                mesa.activo = Convert.ToBoolean(data["activo"]);
+                while (data.Read())
+                {
+                    mesa = new Mesa();
 
+                    mesa.mesa_id = data["mesa_id"].ToString();
+                    mesa.ocupado = Convert.ToBoolean(data["ocupado"]);
+                    mesa.activo = Convert.ToBoolean(data["activo"]);
+
+                }
+
+
+                return mesa;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
             }
 
-
-            return mesa;
+            
         }
 
         public static void Nuevo(Mesa mesa)

@@ -25,6 +25,7 @@ namespace Datos
             {
 
                 sqlCommand.Connection = Conexion;
+                
                 lector = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
                 return lector;
             }
@@ -34,6 +35,8 @@ namespace Datos
                 Console.Write(MethodBase.GetCurrentMethod().Name, ex);
                 throw ex;
             }
+            
+            
 
 
         }

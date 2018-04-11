@@ -96,12 +96,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="administrar-comanda.aspx" />
     <Content Include="asignar-mesa.aspx" />
     <Content Include="buscar-mesa.aspx" />
     <Content Include="crear-mesa.aspx" />
     <Content Include="gestion-mesas.aspx" />
     <Content Include="gestion-perfiles.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="menu-productos.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -184,6 +186,13 @@
     <Content Include="scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="administrar-comanda.aspx.cs">
+      <DependentUpon>administrar-comanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrar-comanda.aspx.designer.cs">
+      <DependentUpon>administrar-comanda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="asignar-mesa.aspx.cs">
       <DependentUpon>asignar-mesa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +244,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu-productos.aspx.cs">
+      <DependentUpon>menu-productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu-productos.aspx.designer.cs">
+      <DependentUpon>menu-productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mesa.master.cs">
       <DependentUpon>Mesa.master</DependentUpon>

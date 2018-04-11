@@ -21,6 +21,8 @@ namespace Entidades
 
         private static double balance = 0.0;
 
+        private const double IVA = 0.013;
+
         public Comanda()
         {
             this.comanda_id = "";
@@ -107,6 +109,24 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Obtiene el total de impuestos que debe ser añadido a la factura.
+        /// </summary>
+        /// <returns></returns>
+        public double obtenerIVA()
+        {
+            return obtenerTotalOrden()*IVA;
+        }
+
+        /// <summary>
+        /// Obtiene el total a pagar de la factura, incluido el impuesto.
+        /// </summary>
+        /// <returns></returns>
+        public double obtenerTotal()
+        {
+            return obtenerTotalOrden() + obtenerIVA();
+        }
+
+        /// <summary>
         /// Realiza el pago de la comanda con el método de pago
         /// preferido por el cliente.
         /// </summary>
@@ -129,6 +149,15 @@ namespace Entidades
 
             return 0.0;
 
+        }
+
+        /// <summary>
+        /// Obtiene el detalle de los pedidos de la comanda.
+        /// </summary>
+        /// <returns></returns>
+        public List<ComandaDetalle> obtenerDetalle()
+        {
+            return this.arrayDetalleOrden;
         }
     }
 }

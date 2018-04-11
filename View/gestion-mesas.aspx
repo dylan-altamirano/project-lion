@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Mesa.master" AutoEventWireup="true" CodeBehind="gestion-mesas.aspx.cs" Inherits="Vista.gestion_mesas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMesaDashboard" runat="server">
+
+      <!--MESSAGE SECTION-->
+    <div class="col-lg-12" style="margin: 1%">
+        <div class="form-group">
+            <asp:Label ID="lblErrorMessageMesaMaster" runat="server" Text="" EnableViewState="false"></asp:Label>
+        </div>
+    </div>
     
+
         <%= sb.ToString() %>
 
 
@@ -29,7 +37,7 @@
                                     <div class="form-group">
                                         <asp:Label ID="lblNombreCliente" runat="server" Text="Nombre del Cliete"></asp:Label>
                                         <asp:TextBox ID="txtNombreCliente" runat="server"  Text="" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="rdfNombreCliente" runat="server" ErrorMessage="Ingrese un texto válido" ControlToValidate="txtNombreCliente"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="rdfNombreCliente" runat="server" ErrorMessage="Ingrese un texto válido" ControlToValidate="txtNombreCliente" ValidationGroup="asignarMesa"></asp:RequiredFieldValidator>
                                     </div>
                                     <div class="form-group">
                                         <asp:Label ID="lblFecha" runat="server" Text="Fecha"></asp:Label>
@@ -37,7 +45,7 @@
                
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="cmdAsignarMesa" runat="server" Text="Confirmar" CssClass="btn btn-primary" OnClick="cmdAsignarMesa_Click"/>
+                                        <asp:Button ID="cmdAsignarMesa" runat="server" Text="Confirmar" CssClass="btn btn-raised btn-primary" OnClick="cmdAsignarMesa_Click" ValidationGroup="asignarMesa"/>
                                     </div>
                                 </fieldset>
 
@@ -48,7 +56,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-raised btn-danger" data-dismiss="modal">Close</button>
                 </div>
 
             </div>
@@ -82,8 +90,8 @@
                                         <p>¿Que acción desea realizar?</p>
                                     </div>
                                      <div class="form-group">
-                                        <asp:Button ID="cmdOrdenar" runat="server" Text="Ordenar" CssClass="btn btn-primary" OnClick="cmdOrdenar_Click"/>
-                                        <asp:Button ID="cmdFacturar" runat="server" Text="Facturar" CssClass="btn btn-primary"  OnClick="cmdFacturar_Click"/>
+                                        <asp:Button ID="cmdOrdenar" runat="server" Text="Ordenar" CssClass="btn btn-raised btn-dark" OnClick="cmdOrdenar_Click" ValidationGroup="administracionComanda"/>
+                                        <asp:Button ID="cmdFacturar" runat="server" Text="Facturar" CssClass="btn btn-raised btn-dark"  OnClick="cmdFacturar_Click" ValidationGroup="administracionComanda"/>
                                     </div>
                                 </div>
                             </div>

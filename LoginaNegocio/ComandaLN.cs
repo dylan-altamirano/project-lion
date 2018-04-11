@@ -37,23 +37,79 @@ namespace LoginaNegocio
         {
             Comanda comanda = null;
 
-            SqlDataReader data = ComandaDato.SeleccionarComanda(id);
+            SqlDataReader data = null;
 
-            while (data.Read())
+            try
             {
-                comanda = new Comanda();
+                data = ComandaDato.SeleccionarComanda(id);
 
-                comanda.comanda_id = data["comanda_id"].ToString();
-                comanda.estadoComanda = EstadoComandaLN.SeleccionarEstadoComanda(data["estadoComanda_id"].ToString());
-                comanda.mesa = MesaLN.SeleccionarMesa(data["mesa_id"].ToString());
-                comanda.estadoCuenta = EstadoCuentaLN.SeleccionarEstadoCuenta(data["estadoCuenta_id"].ToString());
-                comanda.nombreCliente = data["nombreCliente"].ToString();
-                comanda.usuarioComanda = UsuarioLN.SeleccionarUsuarioPorId(data["usuario_id"].ToString());
+                while (data.Read())
+                {
+                    comanda = new Comanda();
 
+                    comanda.comanda_id = data["comanda_id"].ToString();
+                    comanda.estadoComanda = EstadoComandaLN.SeleccionarEstadoComanda(data["estadoComanda_id"].ToString());
+                    comanda.mesa = MesaLN.SeleccionarMesa(data["mesa_id"].ToString());
+                    comanda.estadoCuenta = EstadoCuentaLN.SeleccionarEstadoCuenta(data["estadoCuenta_id"].ToString());
+                    comanda.nombreCliente = data["nombreCliente"].ToString();
+                    comanda.usuarioComanda = UsuarioLN.SeleccionarUsuarioPorId(data["usuario_id"].ToString());
+
+                }
+
+
+                return comanda;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                data.Close();
             }
 
+            
+        }
 
-            return comanda;
+
+        public static Comanda SeleccionarComandaSegunMesaAsignada(string id)
+        {
+            Comanda comanda = null;
+
+            SqlDataReader data = null;
+
+            try
+            {
+                data = ComandaDato.SeleccionarComandaSegunMesaAsignada(id);
+
+                while (data.Read())
+                {
+                    comanda = new Comanda();
+
+                    comanda.comanda_id = data["comanda_id"].ToString();
+                    comanda.estadoComanda = EstadoComandaLN.SeleccionarEstadoComanda(data["estadoComanda_id"].ToString());
+                    comanda.mesa = MesaLN.SeleccionarMesa(data["mesa_id"].ToString());
+                    comanda.estadoCuenta = EstadoCuentaLN.SeleccionarEstadoCuenta(data["estadoCuenta_id"].ToString());
+                    comanda.nombreCliente = data["nombreCliente"].ToString();
+                    comanda.usuarioComanda = UsuarioLN.SeleccionarUsuarioPorId(data["usuario_id"].ToString());
+
+                }
+
+
+                return comanda;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                data.Close();
+            }
+
+            
         }
 
         public static void Nuevo(Comanda comanda)
