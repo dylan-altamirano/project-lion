@@ -99,7 +99,20 @@ namespace Vista
         protected void cmdOrdenar_Click(object sender, EventArgs e)
         {
             Session["mesa_id"] = txtMesaId2.Text;
-            Response.Redirect("administrar-comanda.aspx");
+
+            if (!esFacturable((string)Session["mesa_id"]))
+            {
+                Response.Redirect("administrar-comanda.aspx");
+            }
+            else
+            {
+                lblErrorMessageMesaMaster.Text = "La comanda seleccionada no se puede modificar porque ha sido finalizada. Por favor, proceda a la facturación y cancelación de la misma.";
+                lblErrorMessageMesaMaster.CssClass = "alert alert-info";
+                Response.AppendHeader("Refresh", "2;url=gestion-mesas.aspx");
+
+            }
+
+            
         }
 
         protected void cmdFacturar_Click(object sender, EventArgs e)

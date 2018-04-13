@@ -267,7 +267,7 @@ namespace View
 
         protected void cmdFacturar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("facturacion.aspx");
         }
     }
 }

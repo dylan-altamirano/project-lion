@@ -100,6 +100,7 @@
     <Content Include="asignar-mesa.aspx" />
     <Content Include="buscar-mesa.aspx" />
     <Content Include="crear-mesa.aspx" />
+    <Content Include="facturacion.aspx" />
     <Content Include="gestion-mesas.aspx" />
     <Content Include="gestion-perfiles.aspx" />
     <Content Include="login.aspx" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="facturacion.aspx.cs">
+      <DependentUpon>facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facturacion.aspx.designer.cs">
+      <DependentUpon>facturacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="gestion-mesas.aspx.cs">
       <DependentUpon>gestion-mesas.aspx</DependentUpon>
