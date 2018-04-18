@@ -46,7 +46,7 @@
             <div class="card-body">
                 <p class="card-title"><strong>Facturación</strong></p>
                 <div class="card-text">
-                    <button type="button" class="btn btn-raised" onclick="document.location.href='facturacion.aspx'"><i class="fas fa-money-bill-alt" style="font-size:150px"></i></button>
+                    <button type="button" class="btn btn-raised"><i class="fas fa-money-bill-alt" style="font-size:150px"></i></button>
                 </div>
             </div>
         </div>

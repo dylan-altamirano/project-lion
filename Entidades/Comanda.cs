@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase principal utilizada como la base de la orden de los clientes. En ella, se asocian
+    /// varios elementos que hacen posible el rastrear la orden desde su inicio de vida en el sistema hasta
+    /// su posterior finalización. 
+    /// </summary>
     public class Comanda
     {
         public string comanda_id { get; set; }
@@ -34,7 +39,6 @@ namespace Entidades
             this.arrayDetalleOrden = new List<ComandaDetalle>(); 
             this.nombreCliente = "";
             this.fecha = DateTime.Now;
-            balance = obtenerTotalOrden();
         }
 
         public Comanda(string comanda_id, EstadoComanda estadoComanda, Mesa mesa, EstadoCuenta estadoCuenta, usuario usuarioComanda, string nombreCliente, DateTime fecha)
@@ -48,7 +52,6 @@ namespace Entidades
             this.arrayDetalleOrden = new List<ComandaDetalle>();
             this.nombreCliente = nombreCliente;
             this.fecha = fecha;
-            balance = obtenerTotalOrden();
         }
 
         /// <summary>
@@ -64,7 +67,6 @@ namespace Entidades
 
             arrayDetalleOrden.Add(detalle);
 
-            balance = obtenerTotalOrden();
         }
 
         /// <summary>
@@ -151,6 +153,7 @@ namespace Entidades
 
         }
 
+
         /// <summary>
         /// Obtiene el detalle de los pedidos de la comanda.
         /// </summary>
@@ -158,6 +161,57 @@ namespace Entidades
         public List<ComandaDetalle> obtenerDetalle()
         {
             return this.arrayDetalleOrden;
+        }
+
+        /// <summary>
+        /// Obtiene el detalle de los pagos de la comanda
+        /// </summary>
+        /// <returns></returns>
+        public List<PagoCuenta> obtenerDetallePagos()
+        {
+            return this.arrayPagoCuenta;
+        }
+
+        /// <summary>
+        /// Método que valida que el numero de tarjeta para VISA-DISCOVER y MASTERCARD.
+        /// Utiliza el algoritmo de Luhn para su cometido.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static bool esTarjetaValida(string number)
+        {
+            int digits = number.Length;
+
+            int sum = 0;
+
+            bool esSegundo = false;
+
+            for (int i = digits-1; i >=0; i--)
+            {
+                int d = number[i] - 'a';
+
+                if (esSegundo == true)
+                {
+                    d = d * 2;
+                }
+
+                sum += d / 10;
+                sum += d % 10;
+
+                esSegundo = !esSegundo;
+            }
+
+
+            return (sum % 10 == 0);
+        }
+
+        /// <summary>
+        /// Actualiza el monto del balance del método de pago a realizar.
+        /// </summary>
+        /// <param name="monto"></param>
+        public void actualizarBalance(double monto)
+        {
+            balance = monto;
         }
     }
 }
