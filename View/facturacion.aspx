@@ -114,7 +114,7 @@
                             <asp:Label ID="lblMesa" runat="server" Text="Mesa Nº "></asp:Label>
                             <asp:TextBox ID="txtMesa" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-                    </div>
+                    </div>  
                 </div>
                 <!--End-of-card-row-->
 

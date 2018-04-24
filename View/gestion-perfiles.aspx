@@ -6,6 +6,7 @@
         <div class="card">
             <div class="card-body">
             <div class="form-group">
+
                 <asp:Label ID="lblIdentificacion" runat="server" Text="Identificación">
                     <asp:TextBox ID="txtIdentificacion" runat="server" CssClass="form-control"></asp:TextBox>
                     

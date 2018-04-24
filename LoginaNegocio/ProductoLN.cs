@@ -20,6 +20,8 @@ namespace LoginaNegocio
             foreach (DataRow fila in ds.Tables[0].Rows)
             {
                 Producto registro = new Producto();
+
+                registro.producto_id = fila["producto_id"].ToString();
                 registro.descripcion = fila["descripcion"].ToString();
                 registro.nombreProducto = fila["nombreProducto"].ToString();
                 registro.precio = Convert.ToDouble(fila["precio"]);
@@ -71,6 +73,7 @@ namespace LoginaNegocio
 
                     producto.producto_id = data["producto_id"].ToString();
                     producto.nombreProducto = data["nombreProducto"].ToString();
+                    producto.descripcion = data["descripcion"].ToString();
                     producto.precio = Convert.ToDouble(data["precio"]);
                     producto.activo = Convert.ToBoolean(data["activo"]);
 

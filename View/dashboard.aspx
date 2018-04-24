@@ -35,7 +35,7 @@
             <div class="card-body">
                 <p class="card-title"><strong>Productos</strong></p>
                 <div class="card-text">
-                    <button type="button" class="btn btn-raised"><i class="fas fa-shopping-basket" style="font-size:150px"></i></button>
+                    <button type="button" class="btn btn-raised" onclick="document.location.href='gestion-productos.aspx'"><i class="fas fa-shopping-basket" style="font-size:150px"></i></button>
                 </div>
             </div>
         </div>

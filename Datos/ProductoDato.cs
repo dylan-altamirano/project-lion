@@ -32,7 +32,7 @@ namespace Datos
             SqlCommand comando = new SqlCommand("sp_obtener_productos_filtrado");
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@criterio ", criterio);
+            comando.Parameters.AddWithValue("@criterio", criterio);
             comando.Parameters.AddWithValue("@offset_rows", offset_rows);
             comando.Parameters.AddWithValue("@next_rows", next_rows);
             comando.Parameters.AddWithValue("@opcion ", opcion);
