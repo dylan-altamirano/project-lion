@@ -76,6 +76,12 @@
             document.getElementById('perfiles').hidden = true;
         }
 
+        if (document.getElementById('ContentPlaceHolder1_hfRolProducto').value == 'MESERO') {
+
+            document.getElementById('ProductoMOG').hidden = true;
+            document.getElementById('busqueda').className = 'col-lg-12';
+        }
+
         function getCurrentDate() {
             var currentDate;
 

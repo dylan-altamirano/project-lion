@@ -25,6 +25,14 @@ namespace View
                 precargarGridView();
                 cargarFiltroBusqueda();
                 cargarComboActivo();
+
+
+                usuario user = new usuario();
+
+                user = (usuario)Session["usuarioLogueado"];
+
+                hfRolProducto.Value = user.rolUsuario.ToString();
+
             }
         }
 

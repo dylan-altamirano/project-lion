@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="gestion-productos.aspx.cs" Inherits="View.gestion_productos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <asp:HiddenField ID="hfRolProducto" runat="server" />
     <!--MESSAGE SECTION-->
     <div class="col-lg-12" style="margin: 1%">
         <div class="form-group">
@@ -9,7 +9,7 @@
     </div>
 
 
-     <div class="col-lg-6">
+     <div class="col-lg-6" id="ProductoMOG">
         <div class="card">
             <div class="card-body">
                  <div class="form-group">
@@ -61,7 +61,7 @@
     </div>
 
     <!--BUSQUEDA-->
-    <div class="col-lg-6">
+    <div class="col-lg-6" id="busqueda">
         <div class="card" style="margin-bottom:2%;">
             <div class="card-body">
                 <div class="card-title"><h4>Búsqueda de producto</h4></div>

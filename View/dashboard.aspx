@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Vista.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HiddenField ID="hfRol" runat="server" Value=""/>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card" id="perfiles">
             <div class="card-body">
                 <p class="card-title"><strong>Gestion de Perfiles</strong></p>
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-     <div class="col-md-3">
+     <div class="col-md-4">
         <div class="card" id="mesas">
             <div class="card-body">
                 <p class="card-title"><strong>Gestion de Mesas</strong></p>
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>--%>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card" id="productos">
             <div class="card-body">
                 <p class="card-title"><strong>Productos</strong></p>

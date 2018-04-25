@@ -13,6 +13,15 @@ namespace View {
     public partial class gestion_productos {
         
         /// <summary>
+        /// hfRolProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfRolProducto;
+        
+        /// <summary>
         /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
