@@ -20,6 +20,7 @@
 <body>
     
     <form id="form1" runat="server">
+
         <asp:ScriptManager ID="ScriptManagerPrincipal" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <div class="container">
             <!--NAVIGATION-->
@@ -68,6 +69,12 @@
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
     <script type="text/javascript">
+
+        var rolValue = document.getElementById('ContentPlaceHolder1_hfRol').value;
+
+        if (rolValue == 'MESERO') {
+            document.getElementById('perfiles').hidden = true;
+        }
 
         function getCurrentDate() {
             var currentDate;

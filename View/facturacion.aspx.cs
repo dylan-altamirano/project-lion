@@ -227,7 +227,7 @@ namespace View
 
                         lblErrorMessage.Text = "La comanda has sido cancelada satisfactoriamente. Espere unos segundos y será redirigido a la página principal de comandas.";
                         lblErrorMessage.CssClass = "alert alert-success";
-                        Response.AppendHeader("Refresh", "2;url=gestion-mesas.aspx");
+                        Response.AppendHeader("Refresh", "2;url=reporteFactura.aspx");
                     }
                     catch (Exception ex)
                     {

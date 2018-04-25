@@ -54,7 +54,7 @@
             </div>
             <div class="form-group">
                <asp:Button ID="cmdGuardar" runat="server" Text="Guardar" CssClass="btn btn-raised btn-dark" ValidationGroup="guardar" OnClick="cmdGuardar_Click"/>
-                <asp:Button ID="cmdLimpiar" runat="server" Text="Restablecer" CssClass="btn btn-raised btn-danger" ValidationGroup="guardar" OnClick="cmdLimpiar_Click" />
+                <asp:Button ID="cmdLimpiar" runat="server" Text="Restablecer" CssClass="btn btn-raised btn-dark" ValidationGroup="guardar" OnClick="cmdLimpiar_Click" />
             </div>
            </div> 
         </div>

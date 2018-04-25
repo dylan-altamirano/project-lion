@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="Vista.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="hfRol" runat="server" Value=""/>
     <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="perfiles">
             <div class="card-body">
                 <p class="card-title"><strong>Gestion de Perfiles</strong></p>
                 <div class="card-text">
@@ -11,7 +12,7 @@
         </div>
     </div>
      <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="mesas">
             <div class="card-body">
                 <p class="card-title"><strong>Gestion de Mesas</strong></p>
                 <div class="card-text">
@@ -20,8 +21,8 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card">
+  <%--  <div class="col-md-3">
+        <div class="card" id="comandas">
             <div class="card-body">
                 <p class="card-title"><strong>Comandas</strong></p>
                 <div class="card-text">
@@ -29,9 +30,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="productos">
             <div class="card-body">
                 <p class="card-title"><strong>Productos</strong></p>
                 <div class="card-text">
@@ -41,7 +42,7 @@
         </div>
     </div>
     
-    <div class="col-md-6" style="margin-top:1%;">
+<%--    <div class="col-md-6" style="margin-top:1%;">
         <div class="card">
             <div class="card-body">
                 <p class="card-title"><strong>Facturación</strong></p>
@@ -50,13 +51,13 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6" style="margin-top:1%;">
-        <div class="card">
+    </div>--%>
+    <div class="col-md-12" style="margin-top:1%;">
+        <div class="card" id="reportes">
             <div class="card-body">
                 <p class="card-title"><strong>Reportes</strong></p>
                 <div class="card-text">
-                    <button type="button" class="btn btn-raised"><i class="fas fa-file-alt" style="font-size:150px"></i></button>
+                    <button type="button" class="btn btn-raised" onclick="document.location.href='gestion-reportes.aspx'"><i class="fas fa-file-alt" style="font-size:150px"></i></button>
                 </div>
             </div>
         </div>

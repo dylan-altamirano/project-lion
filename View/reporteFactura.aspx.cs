@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LoginaNegocio;
 using Entidades;
+using LoginaNegocio;
+using Microsoft.Reporting.WebForms;
+using System.Data;
 
 
 namespace View.Reportes
@@ -16,31 +18,52 @@ namespace View.Reportes
         {
             if (!this.IsPostBack)
             {
-                //cagarReporte();
+                cagarReporte();
             }
         }
 
         private void cagarReporte()
         {
 
-            //crvFactura report = new crvFactura();
+            Comanda comanda = (Comanda)Session["comanda_actual"];
 
-            //Comanda comanda = new Comanda();
+            //Reset
+            reportViewerFactura.Reset();
 
-            //comanda = (Comanda)Session["comanda_actual"];
+            //Data Source
 
-            //DataSetFactura ds = new DataSetFactura();
+            DataTable dt = ComandaLN.obtenerReporteFiltrado(comanda.comanda_id);
 
-            //report.SetDataSource(ds);
+            ReportDataSource rds = new ReportDataSource("DataSet1", dt);
 
-            //report.SetParameterValue("nombreClientep", comanda.nombreCliente);
-            //report.SetParameterValue("fechap", comanda.fecha.ToShortDateString());
-            //report.SetParameterValue("mesaIdp", comanda.mesa.mesa_id);
-            //report.SetParameterValue("estadoCuentaIdp", comanda.estadoCuenta.descripcion);
-            //report.SetParameterValue("totalFacturap", comanda.obtenerTotal());
+            reportViewerFactura.LocalReport.DataSources.Add(rds);
 
-            //CrystalReportViewerFactura.ReportSource = report;
-            //CrystalReportViewerFactura.DataBind();
+            //Path
+
+            reportViewerFactura.LocalReport.ReportPath = "factura.rdlc";
+
+            //Parameters
+
+            ReportParameter[] rptParams = new ReportParameter[]
+            {
+                new ReportParameter("comandaId", comanda.comanda_id),
+                new ReportParameter("nombreCliente", comanda.nombreCliente),
+                new ReportParameter("fecha", comanda.fecha.ToShortDateString()),
+                new ReportParameter("totalf", comanda.obtenerTotal().ToString())
+            };
+
+            // Set parameters
+            reportViewerFactura.LocalReport.SetParameters(rptParams);
+
+            //Refresh
+
+            reportViewerFactura.LocalReport.Refresh();
+
+        }
+
+        protected void cmdCerrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("gestion-mesas.aspx");
         }
     }
 }

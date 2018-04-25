@@ -12,6 +12,43 @@ namespace LoginaNegocio
 {
     public class ComandaLN
     {
+
+        public static DataTable obtenerVentasPorFecha(DateTime fecha_ini, DateTime fecha_fin, string estado)
+        {
+            DataTable dt = new DataTable();
+
+            dt = ComandaDato.reporteVentasPorFecha(fecha_ini, fecha_fin, estado);
+
+            return dt;
+        }
+
+        public static DataTable obtenerVentasPorMetodoPago(DateTime fecha_ini, DateTime fecha_fin, string metodo)
+        {
+            DataTable dt = new DataTable();
+
+            dt = ComandaDato.reporteVentasPorMetodoPago(fecha_ini, fecha_fin, metodo);
+
+            return dt;
+        }
+
+        public static DataTable obtenerVentasFiltrado(DateTime fecha_ini, DateTime fecha_fin, string criterio, int opcion)
+        {
+            DataTable dt = new DataTable();
+
+            dt = ComandaDato.reporteVentasFiltrado(fecha_ini, fecha_fin, criterio, opcion);
+
+            return dt;
+        }
+
+        public static DataTable obtenerReporteFiltrado(string comandaId)
+        {
+            DataTable dt = new DataTable();
+
+            dt = ComandaDato.reporteFactura(comandaId);
+
+            return dt;
+        }
+
         public static List<Comanda> ObtenerTodos(string estadoComanda)
         {
             List<Comanda> lista = new List<Comanda>();

@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace View.Reportes {
+namespace View {
     
     
-    public partial class reporteFactura {
+    public partial class gestion_reportes {
         
         /// <summary>
-        /// reportViewerFactura control.
+        /// cmdlReporteVentas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer reportViewerFactura;
+        protected global::System.Web.UI.WebControls.LinkButton cmdlReporteVentas;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// cmdlReporteMetodoPago control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.LinkButton cmdlReporteMetodoPago;
         
         /// <summary>
-        /// cmdCerrar control.
+        /// cmdlReporteFiltrado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdCerrar;
+        protected global::System.Web.UI.WebControls.LinkButton cmdlReporteFiltrado;
     }
 }

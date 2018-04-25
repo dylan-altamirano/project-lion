@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -82,6 +86,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -108,6 +113,7 @@
     <Content Include="gestion-mesas.aspx" />
     <Content Include="gestion-perfiles.aspx" />
     <Content Include="gestion-productos.aspx" />
+    <Content Include="gestion-reportes.aspx" />
     <Content Include="login.aspx" />
     <Content Include="menu-productos.aspx" />
     <Content Include="packages.config" />
@@ -115,9 +121,56 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="reporteFactura.aspx" />
+    <Content Include="reporteFiltrado.aspx" />
+    <Content Include="reporteVentas.aspx" />
+    <Content Include="reporteVentasMetodoPago.aspx" />
     <Content Include="scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="scripts\jquery-3.0.0.min.map" />
     <Content Include="Mesa.master" />
+    <Content Include="DataSetVentas.xsc">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSetMetodoPago.xsc">
+      <DependentUpon>DataSetMetodoPago.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSetFactura.xsc">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFactura.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetFactura.xss">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetMetodoPago.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMetodoPago.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetMetodoPago.xss">
+      <DependentUpon>DataSetMetodoPago.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSetReporteFiltrado.xsc">
+      <DependentUpon>DataSetReporteFiltrado.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetReporteFiltrado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReporteFiltrado.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetReporteFiltrado.xss">
+      <DependentUpon>DataSetReporteFiltrado.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSetVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVentas.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSetVentas.xss">
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,6 +281,26 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataSetFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMetodoPago.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMetodoPago.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetReporteFiltrado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReporteFiltrado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="facturacion.aspx.cs">
       <DependentUpon>facturacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +328,13 @@
     </Compile>
     <Compile Include="gestion-productos.aspx.designer.cs">
       <DependentUpon>gestion-productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestion-reportes.aspx.cs">
+      <DependentUpon>gestion-reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestion-reportes.aspx.designer.cs">
+      <DependentUpon>gestion-reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,6 +375,27 @@
     <Compile Include="reporteFactura.aspx.designer.cs">
       <DependentUpon>reporteFactura.aspx</DependentUpon>
     </Compile>
+    <Compile Include="reporteFiltrado.aspx.cs">
+      <DependentUpon>reporteFiltrado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporteFiltrado.aspx.designer.cs">
+      <DependentUpon>reporteFiltrado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporteVentas.aspx.cs">
+      <DependentUpon>reporteVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporteVentas.aspx.designer.cs">
+      <DependentUpon>reporteVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporteVentasMetodoPago.aspx.cs">
+      <DependentUpon>reporteVentasMetodoPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporteVentasMetodoPago.aspx.designer.cs">
+      <DependentUpon>reporteVentasMetodoPago.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +414,12 @@
       <Project>{5a919cbc-dc71-4a38-a404-5ea9a6c95d1f}</Project>
       <Name>LoginaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="factura.rdlc" />
+    <EmbeddedResource Include="reporteMetodoPago.rdlc" />
+    <EmbeddedResource Include="reporteVentasFiltrado.rdlc" />
+    <EmbeddedResource Include="reporteVentasPorFecha.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

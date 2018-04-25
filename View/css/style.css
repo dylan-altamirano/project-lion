@@ -19,3 +19,14 @@ footer{
 .no-border-custom{
     border-bottom:none;
 }
+
+.text-box-custom{
+    width:auto;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin:5px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+}
+
